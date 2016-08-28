@@ -10,7 +10,11 @@ import java.util.stream.LongStream;
 
 public final class JavaUtils {
 
-	public static List<Integer> getListOfRange(int low, int high) {
+	private JavaUtils() {
+		throw new IllegalAccessError("Utility Class");
+	}
+
+	public static List<Integer> getRangeAsList(int low, int high) {
 		return IntStream.rangeClosed(low, high).boxed().collect(Collectors.toList());
 	}
 
@@ -45,7 +49,7 @@ public final class JavaUtils {
 
 		return ints.stream().filter(n -> IntStream.of(mults).anyMatch(k -> n % k == 0)).collect(Collectors.toList());
 	}
-	
+
 	public static int[] intListToArray(List<Integer> nums) {
 		int[] ints = new int[nums.size()];
 		Iterator<Integer> iterator = nums.iterator();
@@ -95,7 +99,7 @@ public final class JavaUtils {
 	}
 
 	public static double[] getEvensFromArray(double[] nums) {
-		return Arrays.stream(nums).filter(n -> n%2 == 0).toArray();
+		return Arrays.stream(nums).filter(n -> Math.abs(n%2) <= 0.000000001).toArray();
 	}
 
 	public static int[] getOddsFromArray(int[] nums) {
@@ -107,6 +111,6 @@ public final class JavaUtils {
 	}
 
 	public static double[] getOddsFromArray(double[] nums) {
-		return Arrays.stream(nums).filter(n -> n%2 != 0).toArray();
+		return Arrays.stream(nums).filter(n -> Math.abs(n%2) > 0).toArray();
 	}
 }

@@ -1,5 +1,9 @@
 *.class
 
+#Sonar
+.sonar/
+sonar-project.properties
+
 # Eclipse
 .classpath
 .project
