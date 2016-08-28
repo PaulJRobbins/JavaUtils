@@ -43,10 +43,25 @@ public class JavaUtilsTests {
 	}
 	
 	@Test
-	public void testTotalArray() {
+	public void testTotalIntArray() {
 		int expectedSum = 15;
 		int[] ints = new int[]{1,2,3,4,5};
 		
 		assertEquals(expectedSum, JavaUtils.total(ints));
+	}
+
+	@Test
+	public void testTotalDoubleArray() {
+		double expectedSum = 15.0;
+		double[] doubles = new double[]{1.0,2.0,3.0,4.0,5.0};
+		
+		assertTrue(Math.abs(expectedSum - JavaUtils.total(doubles)) == 0);
+	}
+	@Test
+	public void testTotalLongArray() {
+		long expectedSum = 15;
+		long[] longs = new long[]{1,2,3,4,5};
+		
+		assertEquals(expectedSum, JavaUtils.total(longs));
 	}
 }
