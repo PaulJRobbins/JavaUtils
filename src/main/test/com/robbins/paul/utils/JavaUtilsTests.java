@@ -30,7 +30,7 @@ public class JavaUtilsTests {
 	}
 
 	@Test
-	public void testTotalList() {
+	public void testTotalIntList() {
 
 		int expectedSum = 15;
 		List<Integer> list = new ArrayList<>();
@@ -41,6 +41,21 @@ public class JavaUtilsTests {
 		list.add(5);
 		
 		assertEquals(expectedSum, JavaUtils.total(list));
+	}
+	
+	@Test
+	public void testTotalDoubleList() {
+
+		double expectedSum = 17.3;
+		List<Double> list = new ArrayList<>();
+		list.add(1.2);
+		list.add(2.5);
+		list.add(3.1);
+		list.add(4.9);
+		list.add(5.6);
+		
+		System.out.println(JavaUtils.totalDoubles(list));
+		assertEquals(expectedSum, JavaUtils.totalDoubles(list), 0.000100001);
 	}
 	
 	@Test
