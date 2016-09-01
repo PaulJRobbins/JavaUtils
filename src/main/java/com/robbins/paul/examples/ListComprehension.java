@@ -2,8 +2,8 @@ package com.robbins.paul.examples;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
 
-import com.robbins.paul.utils.Func;
 import com.robbins.paul.utils.JavaUtils;
 
 public class ListComprehension {
@@ -17,7 +17,7 @@ public class ListComprehension {
 		l.add("Purple");
 		l.add("Orange");
 		
-		JavaUtils.applyToListInPlace(l, new Func<String, String>() {
+		JavaUtils.applyToListInPlace(l, new Function<String, String>() {
 			
 			public String apply(String in) {
 				return new StringBuilder(in).reverse().toString();

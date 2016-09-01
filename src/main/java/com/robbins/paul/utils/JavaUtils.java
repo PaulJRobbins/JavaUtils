@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
@@ -178,7 +179,7 @@ public final class JavaUtils {
 	 * @param list the list on which the function will be applied
 	 * @param f the function to be applied to each member of the list
 	 */
-	public static <T> void applyToListInPlace(List<T> list, Func<T, T> f) {
+	public static <T> void applyToListInPlace(List<T> list, Function<T, T> f) {
 	    ListIterator<T> itr = list.listIterator();
 	    while (itr.hasNext()) {
 	        T output = f.apply(itr.next());
